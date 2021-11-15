@@ -2,10 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    //UI ui = new UI();
 
     public Main() {
-        //ui.createUI();
+
 
 
     }
@@ -29,6 +28,7 @@ public class Main {
         int numHealthPots = 2; //players starting amount of health potions
         int healthPotionsHealAmount = 30; //how much health pots will heal for
         int healthPotionDropChance = 50; //percentage of enemies dropping health potions
+        int counter = 0;
 
         boolean running = true; //lets the computer know if the game is still running
 
@@ -39,9 +39,7 @@ public class Main {
         while(running){
             System.out.println("-------------------------------------------------");
 
-            System.out.println("You have awoken from a terrible dream.");
-            Thread.sleep(1200);
-            System.out.println("You have a feeling something is watching you.");
+            System.out.println("Something is approaching you");
             Thread.sleep(1200);
             System.out.println("You quickly grab your sword and prepare to fight.");
             Thread.sleep(1200);
@@ -53,7 +51,7 @@ public class Main {
             //      #Skeleton has appeared!
 
             while(enemyHealth > 0) {
-                int counter = 0;
+
                 System.out.println("\tYour HP: " + health);
                 System.out.println("\t" + enemy + "'s HP: " +enemyHealth);
                 Thread.sleep(1200);
@@ -91,17 +89,17 @@ public class Main {
                 }
                 else if(input.equals("3")){
                     counter++;
-                    if(counter ==3){
+                    if(counter > 3){
                         System.out.println("You have tried to run away too many times...");
                         System.out.println("Game Over");
                         break Game;
                     }
                     else
-                    System.out.println("\t You run away from the " + enemy + "!");
+                    System.out.println("You run away from the " + enemy + "!");
                     Thread.sleep(1200);
-                    System.out.println("You suddenly feel something coming over you.. ");
+                    System.out.println("As you continue through the forest you hear rustling in the bushes ");
                     Thread.sleep(1200);
-                    System.out.println("Your view slowly fades to black..");
+                    //System.out.println("Your view slowly fades to black..");
 
                     continue Game; // ignores anything below and restarts from main GAME while loop
 
@@ -140,7 +138,7 @@ public class Main {
                     System.out.println("You continue on your adventure");
                 }
 
-                else if (input.equals("2")){
+                else {
                     System.out.println("You exit the dungeon, successfully.");
                     Thread.sleep(1200);
                     System.out.println("-------------------------------------------------------------");
